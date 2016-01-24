@@ -1,0 +1,13 @@
+Options +FollowSymLinks
+RewriteEngine On
+ 
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+ 
+RewriteRule ^profile/(\d+)*$ ./profile.php?id=$1
+
+RewriteRule ^ticket/admin/(\d+)*$ ./ticket.php?tasks=admin
+RewriteRule ^ticket/complaints/(\d+)*$ ./ticket.php?tasks=complaints&id=$1
+RewriteRule ^ticket/prosecute/(\d+)*$ ./ticket.php?tasks=prosecute&id=$1
+RewriteRule ^ticket/suggestions/(\d+)*$ ./ticket.php?tasks=suggestions&id=$1
+RewriteRule ^ticket/view/(\d+)*$ ./ticket.php?tasks=view&id=$1
